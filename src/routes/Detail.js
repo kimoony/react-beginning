@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import MainTitle from '../components/MainTitle';
+import styles from './Detail.module.css';
+
 
 
 function Detail() {
@@ -25,26 +28,30 @@ function Detail() {
 
   return (
     <div>
-      <div>
+      <div className={styles.container}>
         {
           loading ?
-            <h1>Loading...</h1>
+            <h1 className={styles.loader}>Loading...</h1>
             :
             <div>
-              <div>
+              <MainTitle />
+              <div className={styles.back}>
                 <Link to='/'>← Back</Link>
               </div>
-              <div>
-                <img src={detailMovie.medium_cover_image} alt="coverImg" />
-                <h1>
+              <div className={styles.movie}>
+                <img src={detailMovie.medium_cover_image} alt="coverImg" className={styles.movie__img} />
+                <h1 className={styles.movie__title}>
                   {detailMovie.title}
-                  <span> ({detailMovie.year})</span>
+                  <span className={styles.movie__year}> ({detailMovie.year})</span>
                 </h1>
                 <div>
-                  <span>Rating: {detailMovie.rating} </span>
-                  <span>Like: {detailMovie.like_count} </span>
+                  <div className={styles.movie__rating}>Rating: {detailMovie.rating} </div>
+                  <div className={styles.movie__like}>Like: {detailMovie.like_count} </div>
                 </div>
-                <p>{detailMovie.description_full}</p>
+                <p className={styles.movie__desc}>
+                  <h3>Description</h3>
+                  {detailMovie.description_full}
+                </p>
               </div>
             </div>
         }
