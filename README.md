@@ -4,7 +4,7 @@ nomadcoders 에서 Movie-Web 클론코딩
 
 # 링크
 
-[Movie-Web] (https://kimoony.github.io/react-movie-web/)
+[Movie-Web](https://kimoony.github.io/react-movie-web/)
 
 # 기능사항
 
